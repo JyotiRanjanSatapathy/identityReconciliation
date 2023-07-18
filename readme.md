@@ -8,9 +8,11 @@ Commands to run:
 After this, the server will be live at the following base URL:
 BaseUrl: `http://localhost:3000`
 
+DeployedUrl:`https://identity-recon.onrender.com`
+
 ## EndPoint details
 {
-"url": "identify/",
+"url": "/identify",
 "method": "post",
 "InputType": "body",
 "example": "req.body: {email: string, phoneNumber: string} = {\n "email": "george@hillvalley.edu",\n "phoneNumber": "717171"\n}"
