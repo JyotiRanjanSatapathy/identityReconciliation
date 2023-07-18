@@ -2,7 +2,8 @@
 
 Commands to run:
 1. `npm i`
-2. `npm run dev`
+2. `npm run build`
+3. `npm run start`
 
 After this, the server will be live at the following base URL:
 BaseUrl: `http://localhost:3000`
