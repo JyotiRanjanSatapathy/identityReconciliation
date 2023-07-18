@@ -4,4 +4,4 @@ COPY ["package.json", "package-lock.json*", "./"]
 RUN npm i 
 COPY . .
 COPY . .
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "build" ,"npm", "run", "start"]
