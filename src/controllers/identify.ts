@@ -10,7 +10,7 @@ exports.post = async (req: Request, res: Response) => {
 
         const { email, phoneNumber }: { email: string, phoneNumber: string } = req.body;
 
-        if (!!email && !!phoneNumber) {
+        if (!email && !phoneNumber) {
             return sendResponse(res, { message: 'please provide both mail and phone' }, STATUS_CODES.BAD_REQUEST, false)
         }
 
