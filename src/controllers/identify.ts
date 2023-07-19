@@ -10,6 +10,10 @@ exports.post = async (req: Request, res: Response) => {
 
         const { email, phoneNumber }: { email: string, phoneNumber: string } = req.body;
 
+        if (!!email && !!phoneNumber) {
+            return sendResponse(res, { message: 'please provide both mail and phone' }, STATUS_CODES.BAD_REQUEST, false)
+        }
+
         let userEntity = getManager()
         let userRepository = getRepository(Contact)
 
@@ -127,10 +131,7 @@ exports.post = async (req: Request, res: Response) => {
             }
         }
 
-        //check if it is a secondary contact basis of email/phone
-
-
-        sendResponse(res, responseObject, STATUS_CODES.SUCCESS, true)
+       return sendResponse(res, responseObject, STATUS_CODES.SUCCESS, true)
 
     } catch (err) {
         return sendResponse(res, { msg: err.message }, STATUS_CODES.SERVER_ERROR, false);
